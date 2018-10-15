@@ -185,13 +185,47 @@ void rev()
     }
 }
 
+//function for comparing in the sort() for descending sort
+bool com_fun(int a, int b)
+{
+    return (a > b);
+}
+
+//function for sorting
+void sorting()
+{
+    if(l.empty())
+    {
+        cout<<"\nList is empty can't sort!!!";
+        return;
+    }
+    else
+    {
+        int n;
+        cout<<"\nChoose the sorting type:\n1.Ascending\n2.Descending\nChoice: ";
+        cin>>n;
+
+        switch(n)
+        {
+            case 1: l.sort();
+                    print();
+                    break;
+
+            case 2: l.sort(com_fun);
+                    print();
+                    break;
+
+            default: cout<<"\nWrong Choice!!!";
+        }
+    }    
+}
 //main function
 int main()
 {
     int n,k=0;
     do
     {
-        cout<<"\nEnter a choice:\n1.Insertion\n2.Deletion\n3.Print\n4.Reverse list\nChoice: ";
+        cout<<"\nEnter a choice:\n1.Insertion\n2.Deletion\n3.Print\n4.Reverse list\n5.Sort list\nChoice: ";
         cin>>n;
 
         switch(n)
@@ -206,6 +240,9 @@ int main()
                     break;
 
             case 4: rev();
+                    break;
+            
+            case 5: sorting();
                     break;
 
             default: cout<<"\nWrong Choice!!!";
