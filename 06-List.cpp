@@ -14,7 +14,8 @@ void print()
     }
     else
     {
-        cout<<endl;
+        cout<<"\nCurrent list is as below: ";
+
         for(auto v : l)
         {
             cout<<v<<"->";
@@ -93,19 +94,53 @@ void insertion()
 //function for deletion from begning of the list
 void deleteAtBegning()
 {
-
+    if(l.empty())
+    {
+        cout<<"\nList is empty nothing to delete!!!";
+        return;
+    }
+    else
+    {
+        l.pop_front();
+        print();
+    }
 }
 
 //function for deletion from the middle of the list
 void deleteAtMiddle()
 {
+    if(l.empty())
+    {
+        cout<<"\nList is empty nothing to delete!!!";
+        return;
+    }
+    else
+    {
+        int pos;
+        cout<<"\nEnter a position to be deleted: "; 
+        cin>>pos;
+        list<int>:: iterator it = l.begin();  
+        advance(it,pos-1);
 
+        l.erase(it);
+
+        print();
+    }
 }
 
 //function for deletion from the end of the list
 void deleteAtEnd()
 {
-
+    if(l.empty())
+    {
+        cout<<"\nList is empty nothing to delete!!!";
+        return;
+    }
+    else
+    {
+        l.pop_back();
+        print();
+    }
 }
 
 //function to handle different case  of the deletion method
