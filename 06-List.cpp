@@ -5,7 +5,6 @@ using namespace std;
 //declaring int list
 list<int> l;
 
-
 //function for printing whole list
 void print()
 {
