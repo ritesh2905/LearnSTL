@@ -83,10 +83,13 @@ void insertion()
     {
         case 1: insertAtBegning(k);
                 break;
+
         case 2: insertAtMiddle(k);
                 break;
+
         case 3: insertAtEnd(k);
                 break;
+
         default: cout<<"\nWrong Choice!!!";
     }
 }
@@ -94,14 +97,14 @@ void insertion()
 //function for deletion from begning of the list
 void deleteAtBegning()
 {
-    if(l.empty())
+    if(l.empty()) //checking for null list
     {
         cout<<"\nList is empty nothing to delete!!!";
         return;
     }
     else
     {
-        l.pop_front();
+        l.pop_front(); //using pop_front to remove the element from the front
         print();
     }
 }
@@ -109,7 +112,7 @@ void deleteAtBegning()
 //function for deletion from the middle of the list
 void deleteAtMiddle()
 {
-    if(l.empty())
+    if(l.empty()) //checking for null list
     {
         cout<<"\nList is empty nothing to delete!!!";
         return;
@@ -119,10 +122,11 @@ void deleteAtMiddle()
         int pos;
         cout<<"\nEnter a position to be deleted: "; 
         cin>>pos;
-        list<int>:: iterator it = l.begin();  
-        advance(it,pos-1);
 
-        l.erase(it);
+        list<int>:: iterator it = l.begin();  //creating an iterator
+        advance(it,pos-1); //advancing the iterator to required position
+
+        l.erase(it); //using erase to delete the element present at desired location
 
         print();
     }
@@ -131,14 +135,14 @@ void deleteAtMiddle()
 //function for deletion from the end of the list
 void deleteAtEnd()
 {
-    if(l.empty())
+    if(l.empty()) //checking for null list
     {
         cout<<"\nList is empty nothing to delete!!!";
         return;
     }
     else
     {
-        l.pop_back();
+        l.pop_back(); //using pop_back to remove the element from the back
         print();
     }
 }
@@ -154,31 +158,56 @@ void deletion()
     {
         case 1: deleteAtBegning();
                 break;
+                
         case 2: deleteAtMiddle();
                 break;
+
         case 3: deleteAtEnd();
                 break;
+
         default: cout<<"\nWrong Choice!!!";
     }
 
 }
 
+//function for reversing the list
+void rev()
+{
+    if(l.empty())
+    {
+        cout<<"\nList is empty nothing to reverse!!!";
+        return;
+    }
+    else
+    {
+        l.reverse(); //function to reverse list
+        print();
+    }
+}
+
+//main function
 int main()
 {
     int n,k=0;
     do
     {
-        cout<<"\nEnter a choice:\n1.Insertion\n2.Deletion\n3.Print\nChoice: ";
+        cout<<"\nEnter a choice:\n1.Insertion\n2.Deletion\n3.Print\n4.Reverse list\nChoice: ";
         cin>>n;
 
         switch(n)
         {
             case 1: insertion();
                     break;
+
             case 2: deletion();
                     break;
+
             case 3: print();
                     break;
+
+            case 4: rev();
+                    break;
+
             default: cout<<"\nWrong Choice!!!";
         }
 
