@@ -8,7 +8,18 @@ list<int> l;
 //function for printing whole list
 void print()
 {
-
+    if(l.empty())
+    {
+        cout<<"\nList is empty!!!";
+    }
+    else
+    {
+        cout<<endl;
+        for(auto v : l)
+        {
+            cout<<v<<"->";
+        }
+    }
 }
 
 //function for insertion at begning of the list
@@ -28,11 +39,20 @@ void insertAtMiddle(int n)
     cout<<"\nEnter position to insert number: ";
     cin>>pos;
 
-    list<int>::iterator it = l.begin(); //declaring it as iterator for iterating in the list
+    if(l.size() < pos) //checking that user entered the accatable position
+    {
+        cout<<"\nPosition entered the size of list!!!";
+        return;
+    }
+    else
+    {
+        list<int>::iterator it = l.begin(); //declaring it as iterator for iterating in the list
     
-    advance(it,pos-1); //advance is used to iterator point to the desired pointer
+        advance(it,pos-1); //advance is used to iterator point to the desired pointer
     
-    l.insert(it,n); //using insert function to insert value in the list
+        l.insert(it,n); //using insert function to insert value in the list
+    }
+    
     
     print();
 }
@@ -51,7 +71,7 @@ void insertion()
     int n,k;
 
     //giving different choice to the user for inserting values in the list
-    cout<<"Enter a choice:\n1.Insertion at begning\n2.Insertion in middle\n3.Insertion at end\nChoice: ";
+    cout<<"Enter a choice in INSERTION :\n1.Insertion at begning\n2.Insertion in middle\n3.Insertion at end\nChoice: ";
     cin>>n;
 
     cout<<"\nEnter number to insert: ";
@@ -66,7 +86,7 @@ void insertion()
                 break;
         case 3: insertAtEnd(k);
                 break;
-        default: cout<<"Wrong Choice!!!";
+        default: cout<<"\nWrong Choice!!!";
     }
 }
 
@@ -92,7 +112,7 @@ void deleteAtEnd()
 void deletion()
 {
     int n;
-    cout<<"Enter a choice:\n1.Deletion at begning\n2.Deletion in middle\n3.Deletion at end\nChoice: ";
+    cout<<"Enter a choice in DELETION :\n1.Deletion at begning\n2.Deletion in middle\n3.Deletion at end\nChoice: ";
     cin>>n;
 
     switch(n)
@@ -103,7 +123,7 @@ void deletion()
                 break;
         case 3: deleteAtEnd();
                 break;
-        default: cout<<"Wrong Choice!!!";
+        default: cout<<"\nWrong Choice!!!";
     }
 
 }
@@ -124,10 +144,10 @@ int main()
                     break;
             case 3: print();
                     break;
-            default: cout<<"Wrong Choice!!!";
+            default: cout<<"\nWrong Choice!!!";
         }
 
-        cout<<"Enter 1 to continue ......";
+        cout<<"\nEnter 1 to continue ......";
         cin>>k;
 
     }while(k==1);
