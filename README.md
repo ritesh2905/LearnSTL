@@ -11,3 +11,4 @@
 #### 6. Use List in STL to make a program for insertion(begning, middle, end), deletion(begning, middle, end), reverse a list and sort(ascending and descending).
 #### 7. Implementing map in STL
 #### 8. Implementing Stack in STL
+#### 9. Implementing Queue in STL
