@@ -4,19 +4,20 @@ using namespace std;
 
 stack<int> s; //declaring stack with int type
 
+//function for printing current stck
 void print()
 {
-    if(s.empty())
+    if(s.empty()) //checking for empty list
     {
         cout<<"\nStack is empty!!!";
         return;
     }    
     else
     {
-        stack<int> k;
-        k = s;
+        stack<int> k; //declaring a new stack to store current stack
+        k = s; //assining value to new stack
         cout<<"\nThe stack is:\n";
-        while(!k.empty())
+        while(!k.empty())  //loop for printing the stack while poping elements from stack
         {
             cout<<"\t"<<k.top();
             k.pop();
@@ -24,14 +25,15 @@ void print()
     }
 }
 
+//function for poping stack
 void poping()
 {
-    if(s.empty())
+    if(s.empty()) //checking for empty stack
     {
         cout<<"\nStack is empty nothing to pop!!!";
         return;
     }
-    else
+    else 
     {
         s.pop();
         print();
@@ -63,10 +65,10 @@ int main()
             case 2: poping();
                     break;
             
-            case 3: if(s.empty())
+            case 3: if(s.empty()) //checking for empty stack
                         cout<<"\nStack is empty!!!";
                     else
-                        cout<<"\nThe top is: "<<s.top();
+                        cout<<"\nThe top is: "<<s.top(); //top will give the topmost element of stack
                     break;
             
             default: cout<<"\nWrong choice!!!";
