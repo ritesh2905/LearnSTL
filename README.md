@@ -12,3 +12,4 @@
 #### 7. Implementing map in STL
 #### 8. Implementing Stack in STL
 #### 9. Implementing Queue in STL
+#### 10. Implementing Prority queue in STL
