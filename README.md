@@ -13,3 +13,4 @@
 #### 8. Implementing Stack in STL
 #### 9. Implementing Queue in STL
 #### 10. Implementing Prority queue in STL
+#### 11. Implementing Dequeue in STL
